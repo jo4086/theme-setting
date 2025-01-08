@@ -1,0 +1,127 @@
+ {
+ "editor.semanticTokenColorCustomizations": {
+        "[Solarized Dark]": {
+            "rules": {
+                "function.declaration": {
+                    "foreground": "#d782c6",
+                    "fontStyle": ""
+                },
+                "string.quoted.single.js": {
+                    "fontStyle": ""
+                },
+                "function.defaultLibrary": {
+                    "foreground": "#d782c6",
+                    "fontStyle": "italic bold"
+                }
+            }
+        }
+    },
+
+    "editor.tokenColorCustomizations": {
+        "[Solarized Dark]": {
+            "textMateRules": [
+                {
+                    "scope": ["storage.type.function.js"],
+                    "settings": {
+                        "foreground": "#ff4c4c",
+                        "fontStyle": "italic bold"
+                    }
+                },
+                {
+                    "scope": ["variable.parameter.js"],
+                    "settings": {
+                        "foreground": "#ff4c4c",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "scope": ["string.template.js", "variable.other.object.js", "string.quoted.single.js"],
+                    "settings": {
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": ["comment"],
+                    "settings": {
+                        "foreground": "#b1b456",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": ["storage.type.js", "support.variable.property.js"],
+                    "settings": {
+                        "foreground": "#FFFFFF",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": ["meta.block.js", "text.html.derivative"],
+                    "settings": {
+                        "foreground": "#bfbfbf"
+                    }
+                },
+                {
+                    "scope": ["punctuation.definition.tag.end.html", "punctuation.definition.tag.begin.html", "keyword.operator.relational.js"],
+                    "settings": {
+                        "foreground": "#9f9f9f"
+                    }
+                },
+                {
+                    "scope": ["entity.other.attribute-name.html", "entity.other.attribute-name.pseudo-class.css"],
+                    "settings": {
+                        "foreground": "#859900",
+                        "fontStyle": ""
+                    }
+                }
+            ]
+        }
+    },
+    "workbench.colorCustomizations": {
+        "[Solarized Dark]": {
+            // 액티비티 바
+            "activityBar.background": "#315663",
+
+            // ┏━━━━ 탐색기 ━━━━
+            "sideBar.background": "#28363f", // 탐색기 배경
+            // ┣━ 활성 선택 항목
+            "list.activeSelectionBackground": "#0c3443", // 활성 항목 배경
+            "list.activeSelectionForeground": "#a5fff2", // 활성 항목 텍스트 // 활성화된 줄의 라인 번호 색상
+            // ┣━ 비활성 선택 항목
+            "list.inactiveSelectionBackground": "#0b1e28", // 비활성 항목 배경
+            "list.inactiveSelectionForeground": "#a5fff2", // 비활성 항목 텍스트 색상
+            "list.inactiveFocusOutline": "#0b6290",
+            // ┣━ 마우스 오버
+            "list.hoverBackground": "#0b1e28", // 짙은 녹색 배경
+            "list.hoverForeground": "#efff5c",
+            // ┣━ 키보드
+            "list.focusBackground": "#0b1e28",
+            "list.focusForeground": "#99f0ff",
+            // ┣━ 탐색기 가이드라인 색상
+            "tree.indentGuidesStroke": "#28526c",
+            // ┗━━━━ 탐색끝 ━━━━
+
+            "terminal.border": "#00fff0",
+            "panel.border": "#017878", // 경계선 색상
+            "terminal.background": "#172f3b",
+            "terminal.selectionForeground": "#76a122",
+            "terminal.selectionBackground": "#00e1ff22",
+            // "terminal.dropBackground": "#ff0000a1",
+            "terminalCursor.background": "#fffb00",
+            "terminalCursor.foreground": "#ffffff",
+            // "terminalOverviewRuler.cursorForeground":"#FF0000",
+            // "terminalStickyScrollHover.background":"#FF0000",
+            "panel.background": "#204150", // 패널 배경 색상
+            "panelTitle.activeForeground": "#FFFFFF", // 활성화된 탭 텍스트 색상
+            "panelTitle.inactiveForeground": "#939393", // 비활성화된 탭 텍스트 색상
+            "panelTitle.activeBorder": "#FF5733", // 활성화된 탭 하단 경계선 색상
+            // 편집기 공백부분
+            "editor.lineHighlightBackground": "#30414f", // 현재 줄 배경색
+            "editor.lineHighlightBorder": "#4d5c68", // 현재 줄 테두리 (선택 사항)
+            "editorWhitespace.foreground": "#ffffff", // 공백 문자 색상
+            "editorIndentGuide.background1": "#3a455d",
+            "editorIndentGuide.activeBackground1": "#fdffc3",
+            "editorLineNumber.activeForeground": "#00ffb7"
+        }
+    }
+
+}
