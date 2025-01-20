@@ -1,6 +1,4 @@
-PS1='\[\e[3m\]\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[38;5;41m\]\u@\h \[\033[0;3;33m\]\w\[\033[0m\]\n\[\e[3m\]$ \[\e[0m\]'
-
-# PS1='\[\e[3m\]\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[1;38;5;35m\]\u@\h \[\033[0;3;38;5;204m\]MINGW64 \[\033[33m\]\w\[\033[0m\]\n\[\e[3m\]$ \[\e[0m\]'
+PS1='\[\e[3m\]\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[32m\]\u@\h \[\033[38;5;204m\]MINGW64 \[\033[33m\]\w\[\033[0m\]\n\[\e[3m\]$ \[\e[0m\]'
 
 bind '"\e[3m": self-insert'
 
@@ -23,11 +21,11 @@ alias mkb='cd /c/project/personal-project/full_stack/market/market_api'
 alias project='cd /c/project'
 alias pp='cd /c/project/personal-project'
 
-alias add='git add .'
-alias commit='git commit -m '
-alias push='git push'
-alias pull='git pull'
-alias status='git status'
+alias g-ad='git add .'
+alias g-cm='git commit -m '
+alias g-ps='git push'
+alias g-pl='git pull'
+alias g-st='git status'
 
 alias nS='npm start'
 alias nI='npm install '
@@ -37,12 +35,6 @@ alias yI='yarn install'
 
 alias mD='mkdir '
 alias tC='touch '
-
-alias sync='./sync_submodules.sh'
-
-alias py='python'
-
-export PATH="$HOME/bin:$PATH"
 
 v() {
     case "$1" in
@@ -66,15 +58,4 @@ cat() {
         vm) command cat ~/.vimrc ;;
         *) command cat "$@" ;;
     esac
-}
-
-function run_scripts {
-    # 첫 번째 스크립트 (idea에서 실행)
-    ./check_safe_repos.sh && ./check_submodules.sh
-
-    # 두 번째 스크립트 (idea/library/propStyling에서 실행)
-    cd library/propStyling && ./check_submodule.sh &
-
-    # 기다리기 (백그라운드에서 실행되는 작업들이 모두 끝날 때까지 기다림)
-    wait
 }
