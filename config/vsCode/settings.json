@@ -1,0 +1,191 @@
+{
+    "editor.wordWrap": "on",
+    //프리터설정
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "prettier.trailingComma": "all", // 쉼표 뒤에 공백 추가
+    // "prettier.bracketSpacing": true, // 객체 리터럴에 공백 추가
+    // "prettier.semi": true, // 문장의 끝에 세미콜론을 추가
+    // "prettier.singleQuote": true, // 작은 따옴표 사용
+
+    "editor.formatOnSave": true,
+    // jsx 줄바꿈 스타일 : JSX의 닫는 태그가 별도의 줄로 내려오지 않도록 설정
+    // "prettier.jsxBracketSameLine": true,
+    "prettier.bracketSameLine": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+
+    "files.autoSave": "afterDelay",
+
+    "prettier.printWidth": 300, //한 라인당 코드가 300자를 넘지 않도록
+    "prettier.semi": false, //세미콜론(;) 끝에 사용하지 않음 - 자바스크립트 문법 사용시
+    "prettier.singleQuote": true, //작은따옴표('')만 사용 - 자바스크립트 문법 사용시
+    "prettier.tabWidth": 4, //들여쓰기 너비
+    "prettier.endOfLine": "auto",
+    "emmet.variables": {
+        "lang": "ko"
+    }, //프리티어의 줄바꿈 방(LF)식을 윈도우의 줄바꿈 방식(CRLF)으로 맞춰줌
+
+    "explorer.compactFolders": false,
+    "window.zoomLevel": -1.3,
+    "editor.fontFamily": "'JetBrains Mono', D2coding",
+    "editor.letterSpacing": 0.5,
+    "workbench.startupEditor": "none",
+    "editor.minimap.enabled": false,
+    "json.schemas": [],
+    "pasteImage.prefix": "./",
+    "pasteImage.path": "${currentFileDir}/md_image/",
+    "debug.console.fontSize": 13,
+    "workbench.editor.enablePreview": false,
+    // "editor.hover.enabled": false,
+    "editor.parameterHints.enabled": false,
+    // "pasteImage.prefix": "./",
+    // "pasteImage.path": "${currentFileDir}/image/",
+    // "pasteImage.basePath": "${projectRoot}/public",
+    // "pasteImage.path": "${projectRoot}/public/paste-image/${currentFileNameWithoutExt}",
+    // "pasteImage.insertPattern": "<img src=\"${imageFilePath}\" width=\"75%\" />",
+    // "pasteImage.prefix": "/"
+    "editor.semanticTokenColorCustomizations": {
+        "[Solarized Dark]": {
+            "rules": {
+                "function.declaration": {
+                    "foreground": "#d782c6",
+                    "fontStyle": ""
+                },
+                "string.quoted.single.js": {
+                    "fontStyle": ""
+                },
+                "function.defaultLibrary": {
+                    "foreground": "#d782c6",
+                    "fontStyle": "italic bold"
+                }
+            }
+        }
+    },
+
+    "editor.tokenColorCustomizations": {
+        "[Solarized Dark]": {
+            "textMateRules": [
+                {
+                    "scope": ["storage.type.function.js"],
+                    "settings": {
+                        "foreground": "#ff4c4c",
+                        "fontStyle": "italic bold"
+                    }
+                },
+                {
+                    "scope": ["variable.parameter.js"],
+                    "settings": {
+                        "foreground": "#ff4c4c",
+                        "fontStyle": "bold"
+                    }
+                },
+                {
+                    "scope": ["string.template.js", "variable.other.object.js", "string.quoted.single.js"],
+                    "settings": {
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": ["comment"],
+                    "settings": {
+                        "foreground": "#c4c23b",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": ["storage.type.js", "support.variable.property.js"],
+                    "settings": {
+                        "foreground": "#FFFFFF",
+                        "fontStyle": ""
+                    }
+                },
+                {
+                    "scope": ["meta.block.js", "text.html.derivative"],
+                    "settings": {
+                        "foreground": "#bfbfbf"
+                    }
+                },
+                {
+                    "scope": ["punctuation.definition.tag.end.html", "punctuation.definition.tag.begin.html", "keyword.operator.relational.js"],
+                    "settings": {
+                        "foreground": "#9f9f9f"
+                    }
+                },
+                {
+                    "scope": ["entity.other.attribute-name.html", "entity.other.attribute-name.pseudo-class.css"],
+                    "settings": {
+                        "foreground": "#859900",
+                        "fontStyle": ""
+                    }
+                }
+            ]
+        }
+    },
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "workbench.colorCustomizations": {
+        "[Solarized Dark]": {
+            // 액티비티 바
+            "activityBar.background": "#315663",
+
+            // ┏━━━━ 탐색기 ━━━━
+            "sideBar.background": "#28363f", // 탐색기 배경
+            // ┣━ 활성 선택 항목
+            "list.activeSelectionBackground": "#0c3443", // 활성 항목 배경
+            "list.activeSelectionForeground": "#a5fff2", // 활성 항목 텍스트 // 활성화된 줄의 라인 번호 색상
+            // ┣━ 비활성 선택 항목
+            "list.inactiveSelectionBackground": "#0b1e28", // 비활성 항목 배경
+            "list.inactiveSelectionForeground": "#a5fff2", // 비활성 항목 텍스트 색상
+            "list.inactiveFocusOutline": "#0b6290",
+            // ┣━ 마우스 오버
+            "list.hoverBackground": "#0b1e28", // 짙은 녹색 배경
+            "list.hoverForeground": "#efff5c",
+            // ┣━ 키보드
+            "list.focusBackground": "#0b1e28",
+            "list.focusForeground": "#99f0ff",
+            // ┣━ 탐색기 가이드라인 색상
+            "tree.indentGuidesStroke": "#28526c",
+            // ┗━━━━ 탐색끝 ━━━━
+
+            "terminal.border": "#00fff0",
+            "panel.border": "#017878", // 경계선 색상
+            "terminal.background": "#172f3b",
+            "terminal.selectionForeground": "#76a122",
+            "terminal.selectionBackground": "#00e1ff22",
+            // "terminal.dropBackground": "#ff0000a1",
+            "terminalCursor.background": "#fffb00",
+            "terminalCursor.foreground": "#ffffff",
+            // "terminalOverviewRuler.cursorForeground":"#FF0000",
+            // "terminalStickyScrollHover.background":"#FF0000",
+            "panel.background": "#204150", // 패널 배경 색상
+            "panelTitle.activeForeground": "#FFFFFF", // 활성화된 탭 텍스트 색상
+            "panelTitle.inactiveForeground": "#939393", // 비활성화된 탭 텍스트 색상
+            "panelTitle.activeBorder": "#FF5733", // 활성화된 탭 하단 경계선 색상
+            // 편집기 공백부분
+            "editor.lineHighlightBackground": "#30414f", // 현재 줄 배경색
+            "editor.lineHighlightBorder": "#4d5c68", // 현재 줄 테두리 (선택 사항)
+            "editorWhitespace.foreground": "#ffffff", // 공백 문자 색상
+            "editorIndentGuide.background1": "#3a455d",
+            "editorIndentGuide.activeBackground1": "#fdffc3",
+            "editorLineNumber.activeForeground": "#00ffb7"
+        }
+    },
+    "editor.fontSize": 14,
+    "editor.fontLigatures": false,
+    "terminal.integrated.letterSpacing": 1,
+    "terminal.integrated.customGlyphs": true,
+    "terminal.integrated.defaultProfile.windows": "bash",
+    "terminal.integrated.profiles.windows": {
+        "bash": {
+            "path": "E:\\Git\\bin\\bash.exe",
+            "args": [],
+            "colorScheme": "Custom Italic"
+            // E:\Git\bin
+        }
+    },
+    "terminal.integrated.fontFamily": "'JetBrains Mono', D2coding",
+    "workbench.panel.showLabels": false,
+    "markdown-preview-github-styles.colorTheme": "light",
+    "terminal.external.windowsExec": "E:\\Git\\git-bash.exe",
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.iconTheme": "material-icon-theme"
+}
