@@ -4,30 +4,14 @@ PS1='\[\e[3m\]\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[38;5;41m\]\u@\h \[\033[0;
 
 bind '"\e[3m": self-insert'
 
-alias snb='cd /c/project/node_class/ch05/sns-api'
-alias snf='cd /c/project/node_class/ch05/sns-frontend/src'
-
-alias snfap='vim /c/project/node_class/ch05/sns-frontend/src/App.js'
-alias snbap='vim /c/project/node_class/ch05/sns-api/app.js'
-
 alias ls='ls -lsh'
-alias bdf='cd /c/project/board/board-frontend/src'
-alias bdb='cd /c/project/board/board-api'
-
-alias bdfapp='vim /c/project/board/board-frontend/src/App.js'
-alias bdbapp='vim /c/project/board/board-api/app.js'
-
-alias mkf='cd /c/project/personal-project/full_stack/market/market_front/src'
-alias mkb='cd /c/project/personal-project/full_stack/market/market_api'
-
-alias project='cd /c/project'
-alias pp='cd /c/project/personal-project'
 
 alias add='git add .'
 alias commit='git commit -m '
 alias push='git push'
 alias pull='git pull'
 alias status='git status'
+alias acp='acp_script.sh'
 
 alias nS='npm start'
 alias nI='npm install '
@@ -68,13 +52,13 @@ cat() {
     esac
 }
 
-function run_scripts {
-    # 첫 번째 스크립트 (idea에서 실행)
-    ./check_safe_repos.sh && ./check_submodules.sh
+# function run_scripts {
+#     # 첫 번째 스크립트 (idea에서 실행)
+#     ./check_safe_repos.sh && ./check_submodules.sh
 
-    # 두 번째 스크립트 (idea/library/propStyling에서 실행)
-    cd library/propStyling && ./check_submodule.sh &
+#     # 두 번째 스크립트 (idea/library/propStyling에서 실행)
+#     cd library/propStyling && ./check_submodule.sh &
 
-    # 기다리기 (백그라운드에서 실행되는 작업들이 모두 끝날 때까지 기다림)
-    wait
-}
+#     # 기다리기 (백그라운드에서 실행되는 작업들이 모두 끝날 때까지 기다림)
+#     wait
+# }

@@ -5,12 +5,9 @@ set expandtab
 set autoindent
 set mouse=a
 set encoding=utf-8
-" set clipboard=unnamedplus
+
 set cursorline
 set whichwrap+=<,>,h,l
-" set clipboard=unnamedplus
-set scrolloff=8
-set laststatus=2
 
 " UI
 set ruler
