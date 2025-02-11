@@ -25,8 +25,8 @@ TIME=$(date +"%Hh %Mm")
 # 실행 시작
 echo ""
 
-# 인자로 받은 내용 저장 (기본값: "X")
-work="${1:-X}"
+# 인자로 받은 내용 저장 (기본값: "Null")
+comment="${1:-Null}"
 
 # Git add
 echo -e "${YELLOWBOLD}== 📌 파일 추가중... ==${RESET}"
@@ -36,7 +36,7 @@ echo ""
 
 # Git commit (자동 메시지)
 echo -e "${YELLOWBOLD}== 📌 커밋 진행중... ==${RESET}"
-git commit -m "Date: $DATE / Time: $TIME / Work: ${work}"
+git commit -m "Date: $DATE / Time: $TIME / Comment: ${comment}"
 echo -e "${GREENBOLD}✅ 커밋 완료!${RESET}"
 echo ""
 
