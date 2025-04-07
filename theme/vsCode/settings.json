@@ -1,0 +1,155 @@
+{
+   "editor.wordWrap": "on",
+   "editor.defaultFormatter": "esbenp.prettier-vscode",
+   "editor.formatOnSave": true,
+   "editor.formatOnPaste": true,
+   "editor.formatOnType": true,
+
+   "prettier.printWidth": 300,
+   "prettier.semi": false,
+   "prettier.singleQuote": true,
+   "prettier.tabWidth": 4,
+   "prettier.endOfLine": "auto",
+
+   "emmet.variables": {
+      "lang": "ko"
+   },
+
+   "explorer.compactFolders": false,
+   "window.zoomLevel": -1.2,
+   "editor.fontFamily": "'JetBrains Mono', D2coding",
+   "editor.letterSpacing": 0.5,
+   "editor.fontSize": 14,
+   "editor.fontLigatures": false,
+   "editor.minimap.enabled": false,
+   "workbench.startupEditor": "none",
+   "workbench.editor.enablePreview": false,
+   "editor.parameterHints.enabled": false,
+
+   "editor.semanticTokenColorCustomizations": {
+      "[Solarized Dark]": {
+         "rules": {
+            "function.declaration": {
+               "foreground": "#d782c6",
+               "fontStyle": ""
+            },
+            "string.quoted.single.js": {
+               "fontStyle": ""
+            },
+            "function.defaultLibrary": {
+               "foreground": "#d782c6",
+               "fontStyle": "italic bold"
+            }
+         }
+      }
+   },
+
+   "editor.tokenColorCustomizations": {
+      "[Solarized Dark]": {
+         "textMateRules": [
+            {
+               "scope": ["storage.type.function.js"],
+               "settings": {
+                  "foreground": "#ff4c4c",
+                  "fontStyle": "italic bold"
+               }
+            },
+            {
+               "scope": ["variable.parameter.js"],
+               "settings": {
+                  "foreground": "#ff4c4c",
+                  "fontStyle": "bold"
+               }
+            },
+            {
+               "scope": ["string.template.js", "variable.other.object.js", "string.quoted.single.js"],
+               "settings": {
+                  "fontStyle": ""
+               }
+            },
+            {
+               "scope": ["comment"],
+               "settings": {
+                  "foreground": "#c4c23b",
+                  "fontStyle": ""
+               }
+            },
+            {
+               "scope": ["storage.type.js", "support.variable.property.js"],
+               "settings": {
+                  "foreground": "#FFFFFF",
+                  "fontStyle": ""
+               }
+            },
+            {
+               "scope": ["meta.block.js", "text.html.derivative"],
+               "settings": {
+                  "foreground": "#bfbfbf"
+               }
+            },
+            {
+               "scope": ["punctuation.definition.tag.end.html", "punctuation.definition.tag.begin.html", "keyword.operator.relational.js"],
+               "settings": {
+                  "foreground": "#9f9f9f"
+               }
+            },
+            {
+               "scope": ["entity.other.attribute-name.html", "entity.other.attribute-name.pseudo-class.css"],
+               "settings": {
+                  "foreground": "#859900",
+                  "fontStyle": ""
+               }
+            }
+         ]
+      }
+   },
+
+   "javascript.updateImportsOnFileMove.enabled": "never",
+
+   "workbench.colorCustomizations": {
+      "[Solarized Dark]": {
+         "activityBar.background": "#315663",
+         "sideBar.background": "#28363f",
+         "list.activeSelectionBackground": "#0c3443",
+         "list.activeSelectionForeground": "#a5fff2",
+         "list.inactiveSelectionBackground": "#0b1e28",
+         "list.inactiveSelectionForeground": "#a5fff2",
+         "list.inactiveFocusOutline": "#0b6290",
+         "list.hoverBackground": "#0b1e28",
+         "list.hoverForeground": "#efff5c",
+         "list.focusBackground": "#0b1e28",
+         "list.focusForeground": "#99f0ff",
+         "tree.indentGuidesStroke": "#28526c",
+         "terminal.border": "#00fff0",
+         "panel.border": "#017878",
+         "terminal.background": "#172f3b",
+         "terminal.selectionForeground": "#76a122",
+         "terminal.selectionBackground": "#00e1ff22",
+         "terminalCursor.background": "#fffb00",
+         "terminalCursor.foreground": "#ffffff",
+         "panel.background": "#204150",
+         "panelTitle.activeForeground": "#FFFFFF",
+         "panelTitle.inactiveForeground": "#939393",
+         "panelTitle.activeBorder": "#FF5733",
+         "editor.lineHighlightBackground": "#30414f",
+         "editor.lineHighlightBorder": "#4d5c68",
+         "editorWhitespace.foreground": "#ffffff",
+         "editorIndentGuide.background1": "#3a455d",
+         "editorIndentGuide.activeBackground1": "#fdffc3",
+         "editorLineNumber.activeForeground": "#00ffb7"
+      }
+   },
+
+   "terminal.integrated.letterSpacing": 1,
+   "terminal.integrated.customGlyphs": true,
+   "terminal.integrated.fontFamily": "'JetBrains Mono', D2coding",
+
+   "workbench.panel.showLabels": false,
+   "workbench.colorTheme": "Solarized Dark",
+   "workbench.iconTheme": "material-icon-theme",
+
+   "files.autoSave": "afterDelay",
+   "files.autoSaveDelay": 2000,
+   "window.menuBarVisibility": "compact"
+}
+

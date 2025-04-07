@@ -40,12 +40,12 @@ let g:closetag_emptyTags_caseSensitive = 1         " 빈 태그 닫기 설정
 
 " ctrl+h를 백스페이스에서분리
 
-" Insert 모드에서 Ctrl+H로 HTML 템플릿 삽입
+" Insert 모드에서 [ctrl + t] 로 HTML 템플릿 삽입
 inoremap <C-t> <Esc>:call InsertHtmlTemplate()<CR>
 
 " HTML 템플릿 함수
 function! InsertHtmlTemplate()
-    call append(line('.'), [
+    call setline(line('.'), [
     \ '<!DOCTYPE html>',
     \ '<html lang="ko">',
     \ '   <head>',
@@ -59,4 +59,5 @@ function! InsertHtmlTemplate()
     \ '</html>'
     \ ])
     normal! j
+    startinsert
 endfunction
