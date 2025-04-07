@@ -1,0 +1,18 @@
+1. Icon 위치: C:\Program Files\Git\mingw64\share\git\git-for-windows.ico
+2. 명령줄 위치:  C:/Program Files/Git/bin/bash.exe -i -l
+
+
+nodejs
+https://nodejs.org/dist/v22.14.0/node-v22.14.0-x64.msi
+
+windows terminal
+https://github.com/microsoft/terminal/releases/download/v1.22.10731.0/Microsoft.WindowsTerminal_1.22.10731.0_x64.zip
+
+powershell 7.0
+https://github.com/PowerShell/PowerShell/releases/download/v7.5.0/PowerShell-7.5.0-win-x64.msi
+
+vscode
+https://code.visualstudio.com/download#
+
+git-bash
+https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/Git-2.49.0-64-bit.exe
