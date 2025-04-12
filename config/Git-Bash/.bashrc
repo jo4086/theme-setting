@@ -4,15 +4,25 @@ PS1='\[\e[3m\]\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[38;5;41m\]\u@\h \[\033[0;
 
 bind '"\e[3m": self-insert'
 
-alias ls='ls -lsh'
+# ◆ alias
+# ◇ script
+# alias ls='ls -lsh'
+alias tree='tree.sh'
+alias tree-d='tree_depth2.sh'
+alias tree-a='tree_all.sh'
 
+
+alias acp='acp_sh.sh'
+alias sbp='sbp_script.sh'
+
+# ◇ git
 alias add='git add .'
 alias commit='git commit -m '
 alias push='git push'
 alias pull='git pull'
 alias status='git status'
-alias acp='acp_script.sh'
 
+# ◇ npm & yarn
 alias nS='npm start'
 alias nI='npm install '
 alias yA='yarn add '
@@ -25,6 +35,8 @@ alias tC='touch '
 alias sync='./sync_submodules.sh'
 
 alias py='python'
+
+alias ras='ssh rice-pi4@172.30.1.85'
 
 export PATH="$HOME/bin:$PATH"
 
@@ -44,7 +56,7 @@ src() {
     esac
 }
 
-cat() {
+c() {
     case "$1" in
         bs) command cat ~/.bashrc ;;
         vm) command cat ~/.vimrc ;;
@@ -61,4 +73,6 @@ cat() {
 
 #     # 기다리기 (백그라운드에서 실행되는 작업들이 모두 끝날 때까지 기다림)
 #     wait
-# }
+# } 
+
+# eval "$(oh-my-posh init bash)"
