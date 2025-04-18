@@ -1,6 +1,10 @@
 1. Icon 위치: C:\Program Files\Git\mingw64\share\git\git-for-windows.ico
 2. 명령줄 위치:  C:/Program Files/Git/bin/bash.exe -i -l
 
+vim 플러그인 설정
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 nodejs
 https://nodejs.org/dist/v22.14.0/node-v22.14.0-x64.msi
