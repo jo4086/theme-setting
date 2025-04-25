@@ -2,31 +2,28 @@
     "editor.wordWrap": "on",
     //프리터설정
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "prettier.trailingComma": "all", // 쉼표 뒤에 공백 추가
-    // "prettier.bracketSpacing": true, // 객체 리터럴에 공백 추가
-    // "prettier.semi": true, // 문장의 끝에 세미콜론을 추가
     // "prettier.singleQuote": true, // 작은 따옴표 사용
 
     "editor.formatOnSave": true,
     // jsx 줄바꿈 스타일 : JSX의 닫는 태그가 별도의 줄로 내려오지 않도록 설정
     // "prettier.jsxBracketSameLine": true,
-    "prettier.bracketSameLine": true,
     "editor.formatOnPaste": true,
     "editor.formatOnType": true,
 
-    "files.autoSave": "afterDelay",
-
+    //    "prettier.trailingComma": "all", // 쉼표 뒤에 공백 추가
     "prettier.printWidth": 300, //한 라인당 코드가 300자를 넘지 않도록
     "prettier.semi": false, //세미콜론(;) 끝에 사용하지 않음 - 자바스크립트 문법 사용시
     "prettier.singleQuote": true, //작은따옴표('')만 사용 - 자바스크립트 문법 사용시
     "prettier.tabWidth": 4, //들여쓰기 너비
+    // "prettier.tabWidth": 3, //들여쓰기 너비
     "prettier.endOfLine": "auto",
+    //    "prettier.bracketSameLine": true, // 객체 리터럴에 공백 추가
     "emmet.variables": {
         "lang": "ko"
     }, //프리티어의 줄바꿈 방(LF)식을 윈도우의 줄바꿈 방식(CRLF)으로 맞춰줌
 
     "explorer.compactFolders": false,
-    "window.zoomLevel": -1.3,
+    "window.zoomLevel": -1.2,
     "editor.fontFamily": "'JetBrains Mono', D2coding",
     "editor.letterSpacing": 0.5,
     "workbench.startupEditor": "none",
@@ -36,14 +33,7 @@
     "pasteImage.path": "${currentFileDir}/md_image/",
     "debug.console.fontSize": 13,
     "workbench.editor.enablePreview": false,
-    // "editor.hover.enabled": false,
     "editor.parameterHints.enabled": false,
-    // "pasteImage.prefix": "./",
-    // "pasteImage.path": "${currentFileDir}/image/",
-    // "pasteImage.basePath": "${projectRoot}/public",
-    // "pasteImage.path": "${projectRoot}/public/paste-image/${currentFileNameWithoutExt}",
-    // "pasteImage.insertPattern": "<img src=\"${imageFilePath}\" width=\"75%\" />",
-    // "pasteImage.prefix": "/"
     "editor.semanticTokenColorCustomizations": {
         "[Solarized Dark]": {
             "rules": {
@@ -182,10 +172,108 @@
             // E:\Git\bin
         }
     },
-    "terminal.integrated.fontFamily": "'JetBrains Mono', D2coding",
-    "workbench.panel.showLabels": false,
-    "markdown-preview-github-styles.colorTheme": "light",
     "terminal.external.windowsExec": "E:\\Git\\git-bash.exe",
-    "workbench.colorTheme": "Solarized Dark",
-    "workbench.iconTheme": "material-icon-theme"
+    "terminal.integrated.fontFamily": "'JetBrains Mono', D2coding",
+    "markdown-preview-github-styles.colorTheme": "light",
+    "workbench.colorTheme": "Brackets Light Pro Bold",
+    "workbench.iconTheme": "material-icon-theme",
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 2000,
+    "window.menuBarVisibility": "compact",
+    "terminal.explorerKind": "both",
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "workbench.tree.indent": 10,
+
+    // 마테리얼 아이콘 설정
+    "material-icon-theme.files.color": "#fdd835",
+    "material-icon-theme.folders.color": "#00aaff",
+    "material-icon-theme.files.associations": {
+        "tsup.config.ts": "Tsconfig"
+    },
+    "material-icon-theme.files.customClones": [
+        {
+            "name": "renderdata-js",
+            "base": "javascript",
+            "color": "blue-300",
+            "lightColor": "blue-700",
+            "fileNames": ["generateRenderData.js", "generateRenderData_v2.js", "generateRenderData_v3.js"]
+        },
+        {
+            "name": "orange-js",
+            "base": "javascript",
+            "color": "yellow-500",
+            "lightColor": "orange-400",
+            "fileExtensions": ["js"]
+        },
+        {
+            "name": "package-lock",
+            "base": "npm",
+            "color": "green-300",
+            "lightColor": "green-500",
+            "fileNames": ["package-lock.json"]
+        },
+        {
+            "name": "package",
+            "base": "npm",
+            "color": "red-500",
+            "lightColor": "red-500",
+            "fileNames": ["package.json"]
+        },
+        {
+            "name": "index_d_ts",
+            "base": "tsconfig",
+            "color": "blue-500",
+            "lightColor": "blue-500",
+            "fileNames": ["index.d.ts"]
+        }
+    ],
+    "material-icon-theme.folders.associations": {},
+    "material-icon-theme.folders.customClones": [
+        {
+            "name": "dev",
+            "base": "tools",
+            "color": "red-300",
+            "lightColor": "red-600",
+            "folderNames": ["dev-tools"]
+        },
+        {
+            "name": "ui",
+            "base": "ui",
+            "color": "green-400",
+            "lightColor": "green-700",
+            "folderNames": ["react-ui"]
+        },
+        {
+            "name": "react-compo",
+            "base": "sandbox",
+            "color": "cyan-600",
+            "lightColor": "cyan-600",
+            "folderNames": ["vite"]
+        },
+        {
+            "name": "react-server",
+            "base": "server",
+            "color": "cyan-600",
+            "lightColor": "cyan-600",
+            "folderNames": ["vite-server"]
+        },
+        {
+            "name": "dummy",
+            "base": "archive",
+            "color": "brown-400",
+            "lightColor": "gray-400",
+            "folderNames": ["dummy", "backup", "backups", "__archive__", "archive"]
+        }
+    ],
+    "material-icon-theme.hidesExplorerArrows": true,
+    "workbench.panel.showLabels": false,
+    "liveServer.settings.donotShowInfoMsg": true
+    // "material-icon-theme.activeIconPack": "react"
 }

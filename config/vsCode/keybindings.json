@@ -15,5 +15,55 @@
     {
         "key": "ctrl+n",
         "command": "explorer.newFile"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-github.copilot.generate",
+        "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-search.action.searchWithAI",
+        "when": "hasAIResultProviderKey && searchViewletFocus"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-inlineChat2.stop",
+        "when": "inlineChatHasEditsAgent && inlineChatVisible && chatEdits.requestCount == '0'"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-inlineChat2.reveal",
+        "when": "inlineChatHasEditsAgent && !chatEdits.isGlobalEditingSession && chatEdits.requestCount >= 1"
+    },
+    {
+        "key": "ctrl+k i",
+        "command": "-inlineChat.startWithCurrentLine",
+        "when": "inlineChatHasProvider && !editorReadonly && !inlineChatVisible"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-workbench.action.terminal.chat.start",
+        "when": "chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalHasBeenCreated || chatIsEnabled && terminalChatAgentRegistered && terminalFocusInAny && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-inlineChat.start",
+        "when": "editorFocus && inlineChatHasEditsAgent && inlineChatPossible && !editorReadonly && !editorSimpleInput || editorFocus && inlineChatHasProvider && inlineChatPossible && !editorReadonly && !editorSimpleInput"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-inlineChat.startWithCurrentLine",
+        "when": "inlineChatHasProvider && inlineChatShowingHint && !editorReadonly && !inlineChatVisible"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-workbench.action.chat.openEditSession",
+        "when": "chatEditingParticipantRegistered && !chatSetupHidden && view != 'workbench.panel.chat.view.edits'"
+    },
+    {
+        "key": "alt+oem_5",
+        "command": "-editor.action.inlineSuggest.trigger",
+        "when": "editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
     }
 ]
