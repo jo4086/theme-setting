@@ -1,0 +1,8 @@
+2025/03/16-18:26:04.633 a3f Creating DB /home/rice-pi4/.config/chromium/Default/Local Extension Settings/cjpalhdlnbpafiamejdnhcphjbkeiagm since it was missing.
+2025/03/16-18:26:04.641 a3f Reusing MANIFEST /home/rice-pi4/.config/chromium/Default/Local Extension Settings/cjpalhdlnbpafiamejdnhcphjbkeiagm/MANIFEST-000001
+2025/03/16-18:26:22.369 a40 Level-0 table #5: started
+2025/03/16-18:26:22.500 a40 Level-0 table #5: 4398867 bytes OK
+2025/03/16-18:26:22.507 a40 Delete type=0 #3
+2025/03/16-18:26:33.477 a40 Level-0 table #7: started
+2025/03/16-18:26:33.676 a40 Level-0 table #7: 4736572 bytes OK
+2025/03/16-18:26:33.689 a40 Delete type=0 #4
