@@ -11,13 +11,13 @@ alias tree='tree.sh'
 alias tree-d='tree_depth2.sh'
 alias tree-a='tree_all.sh'
 
-
 alias acp='acp_sh.sh'
 alias sbp='sbp_script.sh'
 
 # ◇ git
-alias add='git add .'
-alias commit='git commit -m '
+alias add='git add '
+alias commit='git commit'
+# alias commit='git commit -m '
 alias push='git push'
 alias pull='git pull'
 alias status='git status'
@@ -37,6 +37,10 @@ alias sync='./sync_submodules.sh'
 alias py='python'
 
 alias ras='ssh rice-pi4@172.30.1.85'
+
+## window system
+# shutdown
+alias shutdown='shutdown -s -f -t '
 
 export PATH="$HOME/bin:$PATH"
 
@@ -62,6 +66,10 @@ c() {
         vm) command cat ~/.vimrc ;;
         *) command cat "$@" ;;
     esac
+}
+
+xhtml() {
+    curl -o x.html localhost:"$1"
 }
 
 # function run_scripts {

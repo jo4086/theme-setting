@@ -1,0 +1,2 @@
+chmod +x ~/.githooks/prepare-commit-msg
+git config --global core.hooksPath ~/.githooks

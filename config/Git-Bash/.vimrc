@@ -61,3 +61,47 @@ function! InsertHtmlTemplate()
     normal! j
     startinsert
 endfunction
+
+" Insert 모드 단축키 (선택사항)
+inoremap <C-g> <Esc>:Docs<CR>
+
+" Git 커밋 템플릿 삽입 함수
+function! InsertGitCommitTemplate(typeText)
+    " 1. 무조건 문서 최상단 1행으로 이동
+    execute "normal! gg"
+
+    " 2. 현재 날짜 생성
+    let l:today = strftime("[%Y-%m-%d]")
+
+    " 3. 1행에 오늘 날짜 삽입
+    call setline(1, l:today)
+
+    " 4. 2행에 [Type] 삽입
+    call append(1, '[' . a:typeText . ']')
+
+    " 5. 3행에 '  - ' 삽입
+    call append(2, '  -  ')
+
+    " 6. 4행에 빈 줄 삽입 (선택사항)
+    call append(3, '')
+
+    " 7. '  - ' 줄로 이동해서 커서 세팅
+    execute "normal! 3gg$"
+
+    " 8. Insert 모드 진입
+    startinsert
+endfunction
+
+" 명령어 등록
+command! Docs call InsertGitCommitTemplate('Docs')
+command! Test call InsertGitCommitTemplate('Test')
+command! Refactor call InsertGitCommitTemplate('Refactor')
+command! Fix call InsertGitCommitTemplate('Fix')
+command! Feat call InsertGitCommitTemplate('Feat')
+command! Design call InsertGitCommitTemplate('Design')
+command! Chore call InsertGitCommitTemplate('Chore')
+command! Hotfix call InsertGitCommitTemplate('!HOTFIX')
+command! Rename call InsertGitCommitTemplate('Rename')
+command! Remove call InsertGitCommitTemplate('Remove')
+command! Comment call InsertGitCommitTemplate('Comment')
+command! Break call InsertGitCommitTemplate('BREAKING CHANGE')
