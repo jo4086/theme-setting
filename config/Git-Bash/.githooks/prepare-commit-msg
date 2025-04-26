@@ -8,10 +8,12 @@ cat <<EOF > "$1"
 
 # === Code Change ===
 # Feat: 새로운 기능 추가
-# Refactor: 코드 리팩터링
-# Chore: 빌드, 설정파일 수정
 # Design: UI / CSS 등 스타일 수정
 # BREAKING: 대규모 API 변경
+
+# Test: 테스트 추가, 테스트 리팩토링(프로덕션 코드 변경 X)
+# Chore: 빌드, 설정파일 수정
+# Refactor: Production 코드 리팩터링
 
 # Rename: 파일 또는 폴더명 수정
 # Remove: 파일 삭제

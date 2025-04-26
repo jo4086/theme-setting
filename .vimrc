@@ -70,20 +70,20 @@ function! InsertGitCommitTemplate(typeText)
     " 1. 무조건 문서 최상단 1행으로 이동
     execute "normal! gg"
 
-    " 2. 1행에 [Type] 삽입
-    call append(0, '[' . a:typeText . ']  ')
+    " 2. 2행에 [Type] 삽입
+    call append(1, '[' . a:typeText . ']')
 
-    " 3. 2행에 '  - ' 삽입
-    call append(1, '  - ')
+    " 3. 3행에 '  - ' 삽입
+    call append(2, '  -  ')
 
-    " 4. 3행에 빈 줄 삽입
-    call append(2, '')
+    " 4. 4행에 빈 줄 삽입
+    call append(3, '')
 
     " 5. 현재 날짜 생성
     let l:today = strftime("[%Y-%m-%d]")
 
-    " 6. 4행에 오늘 날짜 삽입
-    call setline(4, l:today)
+    " 6. 5행에 오늘 날짜 삽입
+    call setline(5, l:today)
 
     " 7. '  - ' 줄로 이동해서 커서 세팅
     execute "normal! 1gg$"
@@ -105,4 +105,3 @@ command! Rename call InsertGitCommitTemplate('Rename')
 command! Remove call InsertGitCommitTemplate('Remove')
 command! Comment call InsertGitCommitTemplate('Comment')
 command! Break call InsertGitCommitTemplate('BREAKING CHANGE')
-command! Style call InsertGitCommitTemplate('Style')
