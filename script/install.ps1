@@ -29,6 +29,8 @@ try {
     .\script\install-config.ps1
 } catch {}
 
+reloadPath
+
 # ✅ VSCode 설치 성공했으면 바로 확장 설치 진행
 if ($VscodeInstallSuccess) {
     try {
@@ -41,6 +43,8 @@ if ($VscodeInstallSuccess) {
 } else {
     Write-Host "⚠️ VSCode가 설치되지 않아 확장 설치를 건너뜁니다."
 }
+
+reloadPath
 
 Write-Host ""
 Write-Host "📢 곧 Git Bash 창이 열립니다. 열린 후에는 git-setup.sh를 실행하세요."

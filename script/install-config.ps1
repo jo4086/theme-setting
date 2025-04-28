@@ -4,19 +4,19 @@ $source = ".\config\Git-Bash"
 $target = $env:USERPROFILE
 $sourceVS = ".\config\vsCode"
 
-cp -Recurse "$source\bin\" "$target\"
-cp -Recurse "$source\.githooks\" "$target\"
+cp -Recurse "$source\bin\" "$target\bin\"
+cp -Recurse "$source\.githooks\" "$target\.githooks\"
 cp "$source\.vimrc" "$target\"
 cp "$source\.bashrc" "$target\"
 cp "$source\.minttyrc" "$target\"
-cp "$sourceVS\keybindings.json" "$target\AppData\Roaming\Code\"
-cp "$sourceVS\settings.json" "$target\AppData\Roaming\Code\"
+cp "$sourceVS\keybindings.json" "$target\AppData\Roaming\Code\User\"
+cp "$sourceVS\settings.json" "$target\AppData\Roaming\Code\User\"
 
 # 폰트 폴더 경로
 $fontFolder = ".\font"
 
 # 폰트 설치 경로
-$windowsFontDir = "$env:SystemRoot\Fonts"
+$windowsFontDir = "$env:SystemRoot\Fonts\"
 
 # 폰트 파일 확장자 종류
 $fontExtensions = "*.ttf","*.ttc","*.fon"

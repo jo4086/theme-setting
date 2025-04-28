@@ -1,48 +1,53 @@
-## STEP 1. powerShell (관리자 권한 실행)
+## === 아래 스크립트 PowerShell 관리자 권한으로 한번에 복사 붙여넣기로 실행 ===
 
-# 1-0. [reloadPath] 함수 및 권한 설정
 function reloadPath { $env:PATH = [System.Environment]::GetEnvironmentVariable("Path", "Machine") }
 Set-ExecutionPolicy Bypass -Scope Process -Force
-
 $SetupPath = $env:USERPROFILE\Desktop
+
 New-Item -Path "$SetupPath\setups" -ItemType Directory -Force
 cd "$SetupPath\setups"
 
-add-Content -Path ".\start2.ps1" -Value 'if (Get-Command git -ErrorAction SilentlyContinue) {'
-add-Content -Path ".\start2.ps1" -Value '  Write-Host "✅ Git 설치됨"'
-add-Content -Path ".\start2.ps1" -Value '  Write-Host "📍 경로: $((Get-Command git).Source)"'
-add-Content -Path ".\start2.ps1" -Value '  git --version } else {'
-add-Content -Path ".\start2.ps1" -Value '  Write-Host "❌ Git 설치 안됨, 설치 진행하세요." }'
+add-Content -Path ".\start.ps1" -Value '$BashInstallSuccess = $false'
+add-Content -Path ".\start.ps1" -Value ''
+add-Content -Path ".\start.ps1" -Value 'if (Get-Command git -ErrorAction SilentlyContinue) {'
+add-Content -Path ".\start.ps1" -Value '  Write-Host "✅ Git 설치됨"'
+add-Content -Path ".\start.ps1" -Value '  Write-Host "📍 경로: $((Get-Command git).Source)"'
+add-Content -Path ".\start.ps1" -Value '  git --version'
+add-Content -Path ".\start.ps1" -Value '  $BashInstallSuccess = $true'
+add-Content -Path ".\start.ps1" -Value '  } else {'
+add-Content -Path ".\start.ps1" -Value '  Write-Host "❌ Git 설치 안됨, 설치 진행하세요."'
+add-Content -Path ".\start.ps1" -Value '}'
+add-Content -Path ".\start.ps1" -Value ''
+add-Content -Path ".\start.ps1" -Value 'if (!$BashInstallSuccess) {'
+add-Content -Path ".\start.ps1" -Value '  try {'
+add-Content -Path ".\start.ps1" -Value '    Write-Host "Installing Git (v2.49.0-64-bit)..."'
+add-Content -Path ".\start.ps1" -Value '    $InstallerPath = "$env:TEMP\gitbash-installer.exe"'
+add-Content -Path ".\start.ps1" -Value ''
+add-Content -Path ".\start.ps1" -Value '    Invoke-WebRequest -Uri "https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/Git-2.49.0-64-bit.exe" -OutFile $InstallerPath'
+add-Content -Path ".\start.ps1" -Value ''
+add-Content -Path ".\start.ps1" -Value '    Start-Process -FilePath $InstallerPath -ArgumentList "/VERYSILENT", "/NORESTART" -Wait'
+add-Content -Path ".\start.ps1" -Value ''
+add-Content -Path ".\start.ps1" -Value '    Write-Host "✅ Git-Bash (v.2.49.0-64-bit) 설치 성공..."'
+add-Content -Path ".\start.ps1" -Value '    $BashInstallSuccess = $true'
+add-Content -Path ".\start.ps1" -Value '  } catch {'
+add-Content -Path ".\start.ps1" -Value '    Write-Host "❌ Git (v2.49.0-64-bit) 설치 실패"'
+add-Content -Path ".\start.ps1" -Value '  }'
+add-Content -Path ".\start.ps1" -Value '}'
+add-Content -Path ".\start.ps1" -Value ''
+add-Content -Path ".\start.ps1" -Value 'if ($BashInstallSuccess) {'
+add-Content -Path ".\start.ps1" -Value '   reloadPath'
+add-Content -Path ".\start.ps1" -Value '   git clone https://github.com/jo4086/theme-setting.git $env:USERPROFILE\Desktop\setup-flow'
+add-Content -Path ".\start.ps1" -Value '   cd $env:USERPROFILE\Desktop\setup-flow'
+add-Content -Path ".\start.ps1" -Value '   .\script\install.ps1'
+add-Content -Path ".\start.ps1" -Value '}'
 
+.\setup.ps1
 
-Add-Content-Path ".\start.ps1" -Value 'Write-Host if (Get-Command git -ErrorAction SilentlyContinue) { Write-Host "✅ Git 설치됨"; Write-Host "📍 경로: $((Get-Command git).Source)"; git --version } else { Write-Host "❌ Git 설치 안됨, 설치 진행하세요." }'
-
-
- 'function if (Get-Command git -ErrorAction SilentlyContinue) { Write-Host "✅ Git 설치됨"; Write-Host "📍 경로: $((Get-Command git).Source)"; git --version } else { Write-Host "❌ Git 설치 안됨, 설치 진행하세요." }'
-
-# 1-1. 깃 설치상태 확인
-if (Get-Command git -ErrorAction SilentlyContinue) { Write-Host "✅ Git 설치됨"; Write-Host "📍 경로: $((Get-Command git).Source)"; git --version } else { Write-Host "❌ Git 설치 안됨, 설치 진행하세요." }
-
-# 1-1-1. 깃 설치 (2줄 실행)
-Invoke-WebRequest -Uri "https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/Git-2.49.0-64-bit.exe" -OutFile "$env:TEMP\gitbash-installer.exe"
-Start-Process -FilePath "$env:TEMP\gitbash-installer.exe" -ArgumentList "/VERYSILENT", "/NORESTART" -Wait
-
-# 1-2. 환경변수 업데이트
-reloadPath
-
-# 1-2. 깃 클론
-git clone https://github.com/jo4086/theme-setting.git $env:USERPROFILE\Desktop\setup-flow
-
-# 1-3. 위치 이동
-cd $env:USERPROFILE\Desktop\setup-flow
-# 깃 수동 설치
-
-# 1-4. 설치 스크립트 실행
-.\script\install.ps1
+## === 여기까지 복붙 ===
 
 ## STEP 2. Git
 # 2-1. 깃 배쉬 위치이동
-cd $HOME/Desktop/setup-flow/theme-setting
+cd $HOME/Desktop/setup-flow
 
 # 2-2. 스크립트 권한 허용
 chmod +x ./git-setup.sh
