@@ -2,28 +2,31 @@ $ResultLog = ""
 $VScodeInstallSuccess = $false
 
 try {
-    Set-ExecutionPolicy Bypass -Scope Process -Force
+    .\script\install-powershell.ps1 -ResultLog ([ref]$ResultLog)
 } catch {}
 
-try {
-    .\install-powershell.ps1 -ResultLog ([ref]$ResultLog)
-} catch {}
+reloadPath
 
 try {
-    .\install-vscode.ps1 -ResultLog ([ref]$ResultLog)
-    $VscodeInstallSuccess = $true # 설치 성공시 true 실패시 catch문으로 넘어감
+    .\script\install-vscode.ps1 -ResultLog ([ref]$ResultLog)
+    $VscodeInstallSuccess = $true
 } catch {}
 
+reloadPath
+
 try {
-    .\install-nodejs.ps1 -ResultLog ([ref]$ResultLog)
+    .\script\install-nodejs.ps1 -ResultLog ([ref]$ResultLog)
 } catch {}
+
+reloadPath
 
 # try {
 #     .\install-gitbash.ps1 -ResultLog ([ref]$ResultLog)
 # } catch {}
 
+
 try {
-    .\install-config.ps1
+    .\script\install-config.ps1
 } catch {}
 
 # ✅ VSCode 설치 성공했으면 바로 확장 설치 진행
