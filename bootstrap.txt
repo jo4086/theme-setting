@@ -41,7 +41,7 @@ add-Content -Path ".\start.ps1" -Value '   cd $env:USERPROFILE\Desktop\setup-flo
 add-Content -Path ".\start.ps1" -Value '   .\script\install.ps1'
 add-Content -Path ".\start.ps1" -Value '}'
 
-.\setup.ps1
+.\start.ps1
 
 ## === 여기까지 복붙 ===
 
