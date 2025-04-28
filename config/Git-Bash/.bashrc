@@ -29,8 +29,14 @@ alias yA='yarn add '
 alias yC='yarn create react-app '
 alias yI='yarn install'
 
+# ◇ system
 alias mD='mkdir '
 alias tC='touch '
+alias newgit='start "" "E:\Git\git-bash.exe"'
+
+# ◇ windows terminal
+alias wt-d='wt -d .'
+alias wt-pwsh='wt new-tab -p "PowerShell"'
 
 alias sync='./sync_submodules.sh'
 
