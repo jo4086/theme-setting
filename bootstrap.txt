@@ -1,0 +1,35 @@
+## STEP 1. powerShell (관리자 권한 실행)
+# 1-1. 깃 설치상태 확인
+if (Get-Command git -ErrorAction SilentlyContinue) { Write-Host "✅ Git 설치됨"; Write-Host "📍 경로: $((Get-Command git).Source)"; git --version } else { Write-Host "❌ Git 설치 안됨, 설치 진행하세요." }
+
+# 1-1-1. 깃 설치 (2줄 실행)
+Invoke-WebRequest -Uri "https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/Git-2.49.0-64-bit.exe" -OutFile "$env:TEMP\gitbash-installer.exe"
+
+Start-Process -FilePath "$env:TEMP\gitbash-installer.exe" -ArgumentList "/VERYSILENT", "/NORESTART" -Wait
+
+# 1-2. 깃 클론
+git clone https://github.com/jo4086/theme-setting.git $env:USERPROFILE\Desktop\setup-flow
+
+# 1-3. 위치 이동
+cd $env:USERPROFILE\Desktop\setup-flow\theme-setting
+# 깃 수동 설치
+
+# 1-4. 설치 스크립트 실행
+.\script\install.ps1
+
+## STEP 2. Git
+# 2-1. 깃 배쉬 위치이동
+cd $HOME/Desktop/setup-flow/theme-setting
+
+# 2-2. 스크립트 권한 허용
+chmod +x ./git-setup.sh
+
+# 2-3. 깃 스크립트 실행
+./script/git-setup.sh
+
+## STEP 3. windowsTerminal 수동 조작
+# 3-1. 설치
+https://github.com/microsoft/terminal/releases/download/v1.22.10731.0/Microsoft.WindowsTerminal_1.22.10731.0_x64.zip
+
+1. Icon 위치: C:\Program Files\Git\mingw64\share\git\git-for-windows.ico
+2. 명령줄 위치:  C:/Program Files/Git/bin/bash.exe -i -l
