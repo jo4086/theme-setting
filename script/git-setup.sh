@@ -2,6 +2,9 @@
 
 source ~/.bashrc
 
+EMAIL="$1"
+NAME="$2"
+
 # [1] githooks 폴더에 prepare-commit-msg 파일 권한 주기
 if [ -f ~/.githooks/prepare-commit-msg ]; then
   chmod +x ~/.githooks/prepare-commit-msg
@@ -34,3 +37,10 @@ fi
 echo ""
 echo "🎉 Git 환경 설정 및 vim 플러그인 설치 완료!"
 
+# [5] git config email, name 연결
+
+git config --global user.email "$EMAIL"
+git config --global user.name "$NAME"
+
+echo "git config 상태 안내"
+c ~/.gitconfig

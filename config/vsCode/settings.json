@@ -163,7 +163,7 @@
     "editor.fontLigatures": false,
     "terminal.integrated.letterSpacing": 1,
     "terminal.integrated.customGlyphs": true,
-    "terminal.integrated.defaultProfile.windows": "bash",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
     "terminal.integrated.profiles.windows": {
         "bash": {
             "path": "E:\\Git\\bin\\bash.exe",
@@ -175,7 +175,7 @@
     "terminal.external.windowsExec": "E:\\Git\\git-bash.exe",
     "terminal.integrated.fontFamily": "'JetBrains Mono', D2coding",
     "markdown-preview-github-styles.colorTheme": "light",
-    "workbench.colorTheme": "Brackets Light Pro Bold",
+    "workbench.colorTheme": "Solarized Dark",
     "workbench.iconTheme": "material-icon-theme",
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 2000,

@@ -32,7 +32,25 @@ alias yI='yarn install'
 # ◇ system
 alias mD='mkdir '
 alias tC='touch '
-alias newgit='start "" "E:\Git\git-bash.exe"'
+
+# 우리집과 아닌곳일떄 깃 여는 명령
+myHome='start "" "E:/Git/git-bash.exe"'
+nonHome='start "" "C:/Program Files/Git/git-bash.exe"'
+if [ -f /E/Git/git-bash.exe ]; then
+    GIT_BASH_PATH="$myHome"
+elif [ -f /c/Program\ Files/Git/git-bash.exe ]; then
+    GIT_BASH_PATH="$nonHome"
+else
+    echo "Git Bash 실행 파일을 찾을 수 없습니다."
+    GIT_BASH_PATH=""
+fi
+
+alias newgit="$GIT_BASH_PATH"
+
+# if [ -n "$GIT_BASH_PATH"]; then
+# fi
+
+# alias newgit="$GIT_BASH_PATH"
 
 # ◇ windows terminal
 alias wt-d='wt -d .'
@@ -48,7 +66,16 @@ alias ras='ssh rice-pi4@172.30.1.85'
 # shutdown
 alias shutdown='shutdown -s -f -t '
 
-export PATH="$HOME/bin:$PATH"
+# export PATH="$HOME/bin"
+# export PATH=""
+
+# export PATH="/usr/bin:/mingw64/bin:/c/Windows/System32:/c/Windows:$PATH"
+# export PATH="$HOME/bin:/usr/bin:/mingw64/bin:/c/Windows/System32:/c/Windows:$PATH"
+
+case ":$PATH:" in
+    *":$HOME/bin:"*);;
+    *) export PATH="$HOME/bin:$PATH";;
+esac
 
 v() {
     case "$1" in
