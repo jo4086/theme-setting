@@ -1,4 +1,4 @@
-﻿$ResultLog = ""
+$ResultLog = ""
 $VScodeInstallSuccess = $false
 
 try {
@@ -32,24 +32,24 @@ try {
 reloadPath
 
 Write-Host ""
-Write-Host "📢 곧 Git Bash 창이 열립니다. 열린 후에는 git-setup.sh를 실행하세요."
+Write-Host "?�� �?Git Bash 창이 ?�립?�다. ?�린 ?�에??git-setup.sh�??�행?�세??"
 Write-Host ""
 
 Start-Process "C:\Program Files\Git\git-bash.exe"
 
 # 결과 출력
 Write-Host ""
-Write-Host "========= 설치 결과 ========="
+Write-Host "========= ?�치 결과 ========="
 Write-Host $ResultLog
 Write-Host "=============================="
 
-# ✅ VSCode 설치 성공했으면 바로 확장 설치 진행
+# ??VSCode ?�치 ?�공?�으�?바로 ?�장 ?�치 진행
 if ($VscodeInstallSuccess) {
     try {
         .\script\install-vscode-extensions.ps1 -ResultLog ([ref]$ResultLog)
     } catch {}
 } else {
-    Write-Host "⚠️ VSCode가 설치되지 않아 확장 설치를 건너뜁니다."
+    Write-Host "?�️ VSCode가 ?�치?��? ?�아 ?�장 ?�치�?건너?�니??"
 }
 
 reloadPath

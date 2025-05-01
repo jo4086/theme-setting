@@ -1,4 +1,4 @@
-﻿# install-vscode-extensions.ps1
+# install-vscode-extensions.ps1
 
 param([ref]$ResultLog)
 

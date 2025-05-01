@@ -1,4 +1,4 @@
-ï»¿# install-config.ps1
+# install-config.ps1
 
 $source = ".\config\Git-Bash"
 $target = $env:USERPROFILE
@@ -25,10 +25,10 @@ foreach ($ext in $fontExtensions) {
         $targetPath = Join-Path $windowsFontDir $fontFile
 
         try {
-            # í°íŠ¸ ë³µì‚¬
+            # ÆùÆ® º¹»ç
             Copy-Item $_.FullName -Destination $windowsFontDir -Force
 
-            # í™•ì¥ìë³„ë¡œ í°íŠ¸ íƒ€ì… ê²°ì •
+            # È®ÀåÀÚº°·Î ÆùÆ® Å¸ÀÔ °áÁ¤
             $regSuffix = switch ($extName) {
                 ".ttf" { "(TrueType)" }
                 ".ttc" { "(TrueType Collection)" }
@@ -38,12 +38,12 @@ foreach ($ext in $fontExtensions) {
 
             $regName = "$fontName $regSuffix"
 
-            # ë ˆì§€ìŠ¤íŠ¸ë¦¬ ë“±ë¡
+            # ·¹Áö½ºÆ®¸® µî·Ï
             Set-ItemProperty -Path $fontsKey -Name $regName -Value $fontFile -Force
 
-            Write-Host "âœ… ì„¤ì¹˜ ì™„ë£Œ: $fontFile"
+            Write-Host " ¼³Ä¡ ¿Ï·á: $fontFile"
         } catch {
-            Write-Host "âŒ ì„¤ì¹˜ ì¤‘ ì˜¤ë¥˜ ë°œìƒ: $fontFile - $($_.Exception.Message)"
+            Write-Host " ¼³Ä¡ Áß ¿À·ù ¹ß»ı: $fontFile - $($_.Exception.Message)"
         }
     }
 }

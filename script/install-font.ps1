@@ -1,18 +1,4 @@
-﻿# install-config.ps1
-
-$source = ".\config\Git-Bash"
-$target = $env:USERPROFILE
-$sourceVS = ".\config\vsCode"
-
-cp -Recurse "$source\bin\" "$target\bin\"
-cp -Recurse "$source\.githooks\" "$target\.githooks\"
-cp "$source\.vimrc" "$target\"
-cp "$source\.bashrc" "$target\"
-cp "$source\.minttyrc" "$target\"
-cp "$sourceVS\keybindings.json" "$target\AppData\Roaming\Code\User\"
-cp "$sourceVS\settings.json" "$target\AppData\Roaming\Code\User\"
-
-$fontFolder = ".\font"
+﻿$fontFolder = ".\font"
 $windowsFontDir = "$env:SystemRoot\Fonts\"
 $fontExtensions = "*.ttf","*.ttc","*.fon"
 $fontsKey = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts"

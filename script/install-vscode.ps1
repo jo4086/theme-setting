@@ -1,17 +1,16 @@
-# install-vscode.ps1
-
-param([ref]$ResultLog)
+﻿param([ref]$ResultLog)
 
 try {
-    Write-Host "Installing Visual Studio Code(win32-x64-user)..."
+    Write-Host "Installing Visual Studio Code (win32-x64)..."
 
     $InstallerPath = "$env:TEMP\vscode-installer.exe"
 
-    Invoke-WebRequest -Uri "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user" -OutFile $InstallerPath
+    Invoke-WebRequest -Uri "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64" -OutFile $InstallerPath
 
-    Start-Process -FilePath $InstallerPath -ArgumentList "/VERYSILENT", "/NORESTART", "/MERGETASKS=desktopicon,addcontextmenufiles" -Wait
+    # 직접 실행해서 설치 끝나면 자동 다음 줄로 이동
+    & $InstallerPath "/VERYSILENT" "/NORESTART" "/MERGETASKS=desktopicon,addcontextmenufiles"
 
-    $ResultLog.Value += "✅ Visual Studio Code(win32-x64-user) 설치 성공`n"
+    $ResultLog.Value += "✅ Visual Studio Code(win32-x64) 설치 성공`n"
 } catch {
-    $ResultLog.Value += "❌ Visual Studio Code(win32-x64-user) 설치 실패: $($_.Exception.Message)`n"
+    $ResultLog.Value += "❌ Visual Studio Code(win32-x64) 설치 실패: $($_.Exception.Message)`n"
 }
