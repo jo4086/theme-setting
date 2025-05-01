@@ -2,7 +2,7 @@
 
 function reloadPath { $env:PATH = [System.Environment]::GetEnvironmentVariable("Path", "Machine") }
 Set-ExecutionPolicy Bypass -Scope Process -Force
-$SetupPath = $env:USERPROFILE\Desktop
+$SetupPath = "$env:USERPROFILE\Desktop"
 
 New-Item -Path "$SetupPath\setups" -ItemType Directory -Force
 cd "$SetupPath\setups"
@@ -48,12 +48,8 @@ add-Content -Path ".\start.ps1" -Value '}'
 ## STEP 2. Git
 # 2-1. 깃 배쉬 위치이동
 cd $HOME/Desktop/setup-flow
-
-# 2-2. 스크립트 권한 허용
-chmod +x ./git-setup.sh
-
-# 2-3. 깃 스크립트 실행
-./script/git-setup.sh
+chmod +x ./script/git-setup.sh
+./script/git-setup.sh "ghzktm5892@gmail.com" "jo4086"
 
 ## STEP 3. windowsTerminal 수동 조작
 # 3-1. 설치
