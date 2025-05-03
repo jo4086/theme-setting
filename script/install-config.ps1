@@ -6,6 +6,7 @@ $sourceVS = ".\config\vsCode"
 
 cp -Recurse "$source\bin\" "$target\bin\"
 cp -Recurse "$source\.githooks\" "$target\.githooks\"
+cp -Recurse "$source\custom-bashrc" "$target\custom-bashrc\"
 cp "$source\.vimrc" "$target\"
 cp "$source\.bashrc" "$target\"
 cp "$source\.minttyrc" "$target\"
