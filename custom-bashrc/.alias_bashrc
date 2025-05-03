@@ -1,0 +1,54 @@
+# variable
+# INPUT1="$1"
+# INPUT2="$2"
+
+# window System
+# alias shutdown=shutdownWin
+alias shutdown='shutdown -s -f -t '
+# alias open='explorer .'
+
+# ssh
+alias ras='ssh rice-pi4@172.30.1.85'
+
+# window terminal open
+alias wt-d='wt -d .'
+alias wt-pwsh='wt new-tab -p "PowerShell"'
+alias open='oexp'
+
+# 
+alias mkd='mkdir '
+alias tch='touch '
+alias newgit="$GIT_BASH_PATH"
+
+# npm
+alias n-s='npm start'
+alias n-d='npm dev'
+
+# pnpm
+alias pstart='pnpm start'
+alias pdev='pnpm dev'
+
+alias pi='pnpm i '
+alias pid='pnpm i -D '
+alias pa='pnpm add '
+alias p-vite='pnpm create vite '
+alias p-init='pnpm init'
+
+# script
+alias tree='tree.sh'
+alias tree-d='tree_depth2.sh'
+alias tree-a='tree_all.sh'
+alias acp='acp_sh.sh'
+alias sbp='sbp_script-sh'
+
+# git
+alias add='git add '
+alias commit='git commit'
+# alias commit='git commit -m '
+alias push='git push'
+alias pull='git pull'
+alias status='git status'
+
+# 안씀
+# alias sync='./sync_submodules.sh'
+

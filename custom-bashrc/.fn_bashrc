@@ -1,0 +1,54 @@
+myHome='start "" "E:/Git/git-bash.exe"'
+nonHome='start "" "C:/Program Files/Git/git-bash.exe"'
+if [ -f /E/Git/git-bash.exe ]; then
+    GIT_BASH_PATH="$myHome"
+elif [ -f /c/Program\ Files/Git/git-bash.exe ]; then
+    GIT_BASH_PATH="$nonHome"
+else
+    echo "Git Bash 실행 파일을 찾을 수 없습니다."
+    GIT_BASH_PATH=""
+fi
+
+oexp() {
+  explorer "${1:-.}"
+}
+
+mkdcd() {
+  mkdir -p "$1" && cd "$1"
+}
+
+# shutdownWin() {
+#  local t="${1:-0}"   # 기본 0초
+#  cmd.exe /C "shutdown -s -f -t $t"
+# }
+
+# alias shutdown=shutdownWin
+
+v() {
+    case "$1" in
+        bs) command vim ~/.bashrc ;;  # `vim bs` → `vim ~/.bashrc`
+        vm) command vim ~/.vimrc ;;  # `vim vm` → `vim ~/.vimrc`
+        *) command vim "$@" ;;       # 일반적인 vim 사용
+    esac
+}
+
+src() {
+    case "$1" in
+        bs) . ~/.bashrc ;;  # `source bs` → `source ~/.bashrc`
+        vm) command source ~/.vimr ;;   # `source vm` → `source ~/.vimrc`
+        *) . "$@" ;;        # 일반적인 source 사용
+    esac
+}
+
+c() {
+    case "$1" in
+        bs) command cat ~/.bashrc ;;
+        vm) command cat ~/.vimrc ;;
+        *) command cat "$@" ;;
+    esac
+}
+
+xhtml() {
+    curl -o x.html localhost:"$1"
+}
+
