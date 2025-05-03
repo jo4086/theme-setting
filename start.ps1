@@ -1,12 +1,12 @@
 $BashInstallSuccess = $false
 
 if (Get-Command git -ErrorAction SilentlyContinue) {
-  Write-Host "âœ… Git ì„¤ì¹˜ë¨"
-  Write-Host "ğŸ“ ê²½ë¡œ: $((Get-Command git).Source)"
+  Write-Host "? Git ¼³Ä¡µÊ"
+  Write-Host "?? °æ·Î: $((Get-Command git).Source)"
   git --version
   $BashInstallSuccess = $true
   } else {
-  Write-Host "âŒ Git ì„¤ì¹˜ ì•ˆë¨, ì„¤ì¹˜ ì§„í–‰í•˜ì„¸ìš”."
+  Write-Host "? Git ¼³Ä¡ ¾ÈµÊ, ¼³Ä¡ ÁøÇàÇÏ¼¼¿ä."
 }
 
 if (!$BashInstallSuccess) {
@@ -18,10 +18,10 @@ if (!$BashInstallSuccess) {
 
     Start-Process -FilePath $InstallerPath -ArgumentList "/VERYSILENT", "/NORESTART" -Wait
 
-    Write-Host "âœ… Git-Bash (v.2.49.0-64-bit) ì„¤ì¹˜ ì„±ê³µ..."
+    Write-Host "? Git-Bash (v.2.49.0-64-bit) ¼³Ä¡ ¼º°ø..."
     $BashInstallSuccess = $true
   } catch {
-    Write-Host "âŒ Git (v2.49.0-64-bit) ì„¤ì¹˜ ì‹¤íŒ¨"
+    Write-Host "? Git (v2.49.0-64-bit) ¼³Ä¡ ½ÇÆĞ"
   }
 }
 
@@ -29,4 +29,5 @@ if ($BashInstallSuccess) {
    reloadPath
    git clone https://github.com/jo4086/theme-setting.git $env:USERPROFILE\Desktop\setup-flow
    cd $env:USERPROFILE\Desktop\setup-flow
+   .\script\install.ps1
 }
