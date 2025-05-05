@@ -2,6 +2,21 @@
 
 param([ref]$ResultLog)
 
+function IsNodeInstalled {
+    $node = Get-Command node -ErrorAction SilentlyContinue
+    if ($node) {
+        $version = node -v
+        return $version -match "^v22\.14\.0"
+    }
+    return $false
+}
+
+if (IsNodeInstalled) {
+    Write-Host "🟡 Node.js v22.14.0이 이미 설치되어 있습니다. 설치를 건너뜁니다."
+    $ResultLog.Value += "🔁 Node.js v22.14.0 설치 생략 (이미 설치됨)`n"
+    return
+}
+
 try {
     Write-Host "Installing nodejs(v22.14.0-x64)..."
 

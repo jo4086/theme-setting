@@ -1,6 +1,17 @@
 ﻿# PowerShell 7 설치 스크립트 (install-powershell.ps1)
 param([ref]$ResultLog)
 
+function IsPwshInstalled {
+    $pwsh = Get-Command pwsh -ErrorAction SilentlyContinue
+    return $pwsh -and $pwsh.Source -match "PowerShell"
+}
+
+if (IsPwshInstalled) {
+    Write-Host "🟡 PowerShell 7.x가 이미 설치되어 있습니다. 설치를 건너뜁니다."
+    $ResultLog.Value += "🔁 PowerShell 7.x 설치 생략 (이미 설치됨)`n"
+    return
+}
+
 try {
     Write-Host "🔵 Installing PowerShell 7.5.0 ..."
 
