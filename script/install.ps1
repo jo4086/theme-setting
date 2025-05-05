@@ -20,6 +20,12 @@ try {
 
 reloadPath
 
+try {
+    .\script\install-oh-my-posh.ps1 -ResultLog ([ref]$ResultLog)    
+}
+
+reloadPath
+
 # try {
 #     .\install-gitbash.ps1 -ResultLog ([ref]$ResultLog)
 # } catch {}
